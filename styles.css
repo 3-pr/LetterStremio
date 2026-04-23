@@ -1,0 +1,103 @@
+/* ──────────────────────────────────────────────────────────────
+   LetterStremio — Styles
+   Matches Letterboxd's dark theme aesthetic with Stremio purple.
+   ────────────────────────────────────────────────────────────── */
+
+/* Container */
+#letterstremio-container {
+  margin: 12px 0;
+  width: 100%;
+}
+
+/* Button Base */
+.letterstremio-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 16px;
+  background-color: #8A6EAF;
+  color: #ffffff !important;
+  border: none;
+  border-radius: 3px;
+  font-family: "Graphik Web", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.1s ease;
+  box-sizing: border-box;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hover State */
+.letterstremio-btn:hover {
+  background-color: #9d85bf;
+  box-shadow: 0 2px 8px rgba(138, 110, 175, 0.4);
+  text-decoration: none !important;
+  color: #ffffff !important;
+}
+
+/* Active/Click State */
+.letterstremio-btn:active {
+  transform: scale(0.98);
+  background-color: #7a5e9f;
+}
+
+/* Focus State (Accessibility) */
+.letterstremio-btn:focus-visible {
+  outline: 2px solid #8A6EAF;
+  outline-offset: 2px;
+}
+
+/* Disabled State */
+.letterstremio-btn.letterstremio-disabled {
+  background-color: #456;
+  color: #899 !important;
+  cursor: not-allowed;
+  opacity: 0.65;
+  pointer-events: auto; /* Keep for tooltip */
+}
+
+.letterstremio-btn.letterstremio-disabled:hover {
+  background-color: #456;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Play Icon */
+.letterstremio-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* Loading State */
+.letterstremio-btn.letterstremio-loading {
+  background-color: #6b5490;
+  cursor: wait;
+  animation: letterstremio-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes letterstremio-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.letterstremio-btn.letterstremio-loading:hover {
+  background-color: #6b5490;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Label */
+.letterstremio-label {
+  white-space: nowrap;
+}

@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "LetterStremio",
+  "version": "1.1.0",
+  "description": "Adds a \"Watch on Stremio\" button to Letterboxd film and TV show pages.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://letterboxd.com/film/*",
+        "*://www.letterboxd.com/film/*",
+        "*://letterboxd.com/*/film/*",
+        "*://www.letterboxd.com/*/film/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
